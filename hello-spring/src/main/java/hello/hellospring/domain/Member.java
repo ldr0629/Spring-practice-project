@@ -5,9 +5,9 @@ import javax.persistence.*;
 // JPA에서 사용하는 엔티티
 @Entity
 public class Member {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id")
     private Long id;
-    @Column
     private String name;
 
     // Alt + Insert : getter and setter generate

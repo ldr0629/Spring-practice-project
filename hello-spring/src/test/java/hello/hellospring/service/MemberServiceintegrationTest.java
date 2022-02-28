@@ -9,10 +9,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@ContextConfiguration()
 @SpringBootTest
 @Transactional // 테스트 후 데이터를 Rollback하므로 다음 테스트를 반복해서 실행 가능
 class MemberServiceintegrationTest {
@@ -37,7 +40,7 @@ class MemberServiceintegrationTest {
     public void 중복_회원_예외() {
         // given
         Member member1 = new Member();
-        member1.setName("spring");
+        member1.setName("spring2");
 
         Member member2 = new Member();
         member2.setName("spring2");
